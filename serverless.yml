@@ -6,11 +6,11 @@ provider:
   name: aws
   runtime: nodejs12.x
   environment:
-    FN_PROJECT: ${file(./variables-${opt:stage, 'dev'}.env.yml):project}
-    FN_ENVIRONMENT: ${file(./variables-${opt:stage, 'dev'}.env.yml):environment}
+    FN_PROJECT: ${file(./variables.${opt:stage, 'dev'}.yml):project}
+    FN_ENVIRONMENT: ${file(./variables.${opt:stage, 'dev'}.yml):environment}
   tags:
-    Project: ${file(./variables-${opt:stage, 'dev'}.env.yml):project}
-    Environment: ${file(./variables-${opt:stage, 'dev'}.yml):environment}
+    Project: ${file(./variables.${opt:stage, 'dev'}.yml):project}
+    Environment: ${file(./variables.${opt:stage, 'dev'}.yml):environment}
 
 
 functions:
@@ -24,5 +24,5 @@ plugins:
 
 custom:
   webpack:
-    webpackConfig: webpack-${opt:stage, 'dev'}.config.js
+    webpackConfig: webpack.${opt:stage, 'dev'}.js
     includeModules: true

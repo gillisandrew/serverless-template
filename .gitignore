@@ -4,6 +4,6 @@ jspm_packages
 
 # Serverless directories
 .serverless
-variables-*.yml
+variables.*.yml
 .webpack
 .cache
