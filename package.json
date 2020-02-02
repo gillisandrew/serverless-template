@@ -39,6 +39,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tsc --noEmit && eslint './src/**/*.{js,ts,jsx,tsx}' --quiet --fix"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "keywords": [],
   "author": "Andrew Gillis <gillis.andrew@gmail.com>",
   "license": "UNLICENSED"
